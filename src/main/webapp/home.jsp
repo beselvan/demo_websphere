@@ -11,7 +11,7 @@
 <form action='home.jsp'>
 <table>
 <tr>
-        <td><font color="black">User Name </font></td><td><input type='textbox' name='name'/><br/><br/></td>
+        <td><font color="brown">User Name </font></td><td><input type='textbox' name='name'/><br/><br/></td>
 </tr>
 <tr>
         <td><font color="red">Enter you DOB </font></td><td><input type='textbox' name='age'/><br/><br/></td>
