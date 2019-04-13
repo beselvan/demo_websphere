@@ -5,40 +5,40 @@
 <title>Help Page</title>
 </head>
 <body bgcolor="White">
-<table>
+<table border=1 width="50%"><tr bgcolor='Gray'>
 <%
-		try{
-				String sqlstring = null;
-				Connection connection = null;
-				ResultSet resultSet = null;
 
-                Hashtable parms = new Hashtable();
-                parms.put(Context.INITIAL_CONTEXT_FACTORY,"com.ibm.websphere.naming.WsnInitialContextFactory");
-                InitialContext ctx = new InitialContext(parms);
-                DataSource ds = (DataSource)ctx.lookup("java:comp/env/jdbc/ConnectDB");
-			out.print("ds  ------------ \n"+ds);
-			out.newLine();
+	ResultSet rs=null;
+	PreparedStatement ps=null;
+	PreparedStatement ps1=null;
+	ResultSetMetaData md;
+	Connection con = null;
 
+	try{
 
-			Statement statement = connection.createStatement();
+	Hashtable parms = new Hashtable();
+	parms.put(Context.INITIAL_CONTEXT_FACTORY,"com.ibm.websphere.naming.WsnInitialContextFactory");
+	InitialContext ctx = new InitialContext(parms);
+	DataSource ds = (DataSource)ctx.lookup("java:comp/env/jdbc/ConnectDB");
+	con = ds.getConnection();
+	
+	ps=con.prepareStatement("select * from demo");
+	rs=ps.executeQuery();	md = rs.getMetaData();	int count = md.getColumnCount();
 
-			resultSet = statement.executeQuery("SELECT * FROM demo");
+	for (int i=1; i<=count; i++) {
+		out.print("<th>"+md.getColumnName(i)+"</th>");
 
-		while(resultSet.next()){
-		%>
-		<tr>
-		<td><%=resultSet.getString(1) %></td>
-		<td><%=resultSet.getString(2) %></td>
+	}
+		out.print("</tr><tr>");
 
-
-		</tr>
-		<%
-		}
-		connection.close();
-		} catch (Exception e) {
-					out.print(e);
-		}
-		%>
-		</table>
+	while (rs.next()) {
+		out.print("<tr>");
+		for (int i=1; i<=count; i++) 
+			out.print("<td align='center'>"+rs.getString(i)+"</td>");
+	}		out.print("</tr>");}
+	finally {if(rs!=null) rs.close(); if(ps!=null)	ps.close(); if(con!=null) con.close(); }
+%>
+</table>
 </body>
 </html>
+
