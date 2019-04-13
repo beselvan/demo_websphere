@@ -5,22 +5,42 @@
 <title>Help Page</title>
 </head>
 <body bgcolor="White">
-<table border=1 width="50%"><tr bgcolor='Gray'>
+<script type="text/javascript">
+ 
+</script>
+<table border=1 width="50%"><tr bgcolor='Gray'colspan=2>
 <%
 
 	ResultSet rs=null;
 	PreparedStatement ps=null;
-	PreparedStatement ps1=null;
 	ResultSetMetaData md;
 	Connection con = null;
 
 	try{
 
-	Hashtable parms = new Hashtable();
-	parms.put(Context.INITIAL_CONTEXT_FACTORY,"com.ibm.websphere.naming.WsnInitialContextFactory");
-	InitialContext ctx = new InitialContext(parms);
-	DataSource ds = (DataSource)ctx.lookup("java:comp/env/jdbc/ConnectDB");
-	con = ds.getConnection();
+		Context ctx = new InitialContext();
+		DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/ConnectDB");
+		con = ds.getConnection();
+	
+	ps=con.prepareStatement("select count(*) from demo");
+	rs=ps.executeQuery();	md = rs.getMetaData();	int count = md.getColumnCount();
+
+	out.print("<th>Total No. of Rows</th>");
+
+	while (rs.next()) {
+			out.print("<th align='center'>"+rs.getString(1)+"</th>");
+	}		
+	}
+	finally {}
+%>
+<th><form action="${pageContext.request.contextPath}/Truncate" method="post"><input type=submit value="TRUNCATE"></input></form></th></tr>
+</table> <br/><br/>
+
+<table border=1 width="50%"><tr bgcolor='Gray'>
+<%
+
+
+	try{
 	
 	ps=con.prepareStatement("select * from demo");
 	rs=ps.executeQuery();	md = rs.getMetaData();	int count = md.getColumnCount();
