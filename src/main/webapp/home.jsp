@@ -7,6 +7,21 @@
 <title>My Demo</title>
 </head>
 <body style="background-color:powderblue;">
+
+<script type="text/javascript">
+ 
+  function checkForm()
+  {
+    re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+ 
+	 if(batch_check.ph_date.value != '' && !batch_check.ph_date.value.match(re)) {
+
+	  return false;
+ 
+   }
+ 
+</script>
+
 <img src="./images/logo.png"  height="200" width="200" align="right" border="2" />
 <form action='home.jsp'>
 <table>
