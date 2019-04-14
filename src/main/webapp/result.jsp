@@ -2,10 +2,11 @@
     pageEncoding="ISO-8859-1"%>
 <html>
 <head>
-<title>Help Page</title>
+<title>RESULT</title>
 </head>
 <body bgcolor="White">
 
+<p><a href=home.jsp>HOME</a></p>
 
 <table border=1 width="50%"><tr bgcolor='Gray'colspan=2>
 <%

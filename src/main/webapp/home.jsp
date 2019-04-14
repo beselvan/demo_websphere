@@ -7,14 +7,14 @@
 <title>My Demo</title>
 </head>
 <body>
-
+<p"><a href=result.jsp>RESULT</a></p>
 <script type="text/javascript">
  
   function checkForm()
   {
     re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
  
-	 if(batch_check.ph_date.value != '' && !batch_check.ph_date.value.match(re)) {
+	 if(home.name.value != '' && !home.age.value.match(re)) {
 
 	  return false;
  
@@ -22,8 +22,8 @@
  
 </script>
 
-<img src="./images/logo.png"  height="200" width="200" align="right" border="2" />
-<form action='home.jsp'>
+<img src="./images/logo.png"  height="200" width="200" align="right"  />
+<form action='home.jsp' name=home>
 <table>
 <tr>
         <td><font color="black">User Name </font></td><td><input type='textbox' name='name'/><br/><br/></td>
@@ -35,7 +35,9 @@
         <td colspan="2" align="center" valign="center"><input type='submit' value='submit'/><br/><br/><br/></td>
 </tr>
 </table>
-        <p><font color="red"><%=ServerName.getDisplayName()%></font></P>
+<p><font color="red"><%=ServerName.getDisplayName()%></font></P>
+
+
 <%
 String name=request.getParameter("name");
 String age=request.getParameter("age");
@@ -64,7 +66,9 @@ catch(Exception e){
 %>
 
 </form>
-<br><br><br><img src="./images/footer.jpg"  height="222" width="688" align="center" border="2" />
+<br><br><br><img src="./images/footer.jpg"  height="50" width="250" align="center" />
+
+
 </body>
 </html>
 
