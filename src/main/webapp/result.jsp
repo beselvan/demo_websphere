@@ -35,7 +35,7 @@
 	}
 	finally {}
 %>
-<th><input type=submit value="TRUNCATE" onClick='javascript:truncate()'></input></th></tr>
+<th><form action="${pageContext.request.contextPath}/truncate.jsp" method="post"><input type=submit value="TRUNCATE"></input></form></th></tr>
 </table> <br/><br/>
 
 <table border=1 width="50%"><tr bgcolor='Gray'>

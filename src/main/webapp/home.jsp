@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>My Demo</title>
 </head>
-<body style="background-color:powderblue;">
+<body>
 
 <script type="text/javascript">
  
