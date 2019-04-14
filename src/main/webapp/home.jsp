@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>My Demo</title>
+<title>Welcome to Home page</title>
 </head>
 <body>
 <p"><a href=result.jsp>RESULT</a></p>

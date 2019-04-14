@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <html>
 <head>
-<title>RESULT</title>
+<title>Result</title>
 </head>
 <body bgcolor="White">
 
