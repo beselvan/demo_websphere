@@ -4,14 +4,43 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>My Demo</title>
+<title>Welcome to Home page</title>
 </head>
-<body style="background-color:powderblue;">
-<img src="./images/logo.png"  height="200" width="200" align="right" border="2" />
-<form action='home.jsp'>
+<body>
+
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5d19b05d7a48df6da2425216/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+
+<p"><a href=result.jsp>RESULT</a></p>
+<script type="text/javascript">
+ 
+  function checkForm()
+  {
+    re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+ 
+	 if(home.name.value != '' && !home.age.value.match(re)) {
+
+	  return false;
+ 
+   }
+ 
+</script>
+
+<img src="./images/logo.png"  height="200" width="200" align="right"  />
+<form action='home.jsp' name=home>
 <table>
 <tr>
-        <td><font color="brown">User Name </font></td><td><input type='textbox' name='name'/><br/><br/></td>
+        <td><font color="black">User Name </font></td><td><input type='textbox' name='name'/><br/><br/></td>
 </tr>
 <tr>
         <td><font color="red">Enter you DOB </font></td><td><input type='textbox' name='age'/><br/><br/></td>
@@ -20,7 +49,9 @@
         <td colspan="2" align="center" valign="center"><input type='submit' value='submit'/><br/><br/><br/></td>
 </tr>
 </table>
-        <p><font color="red"><%=ServerName.getDisplayName()%></font></P>
+<p><font color="red"><%=ServerName.getDisplayName()%></font></P>
+
+
 <%
 String name=request.getParameter("name");
 String age=request.getParameter("age");
@@ -49,7 +80,12 @@ catch(Exception e){
 %>
 
 </form>
-<br><br><br><img src="./images/footer.jpg"  height="222" width="688" align="center" border="2" />
+<br><br><br><img src="./images/footer.jpg"  height="50" width="250" align="center" />
+
+
+
+
+
 </body>
 </html>
 
