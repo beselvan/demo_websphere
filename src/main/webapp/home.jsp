@@ -69,7 +69,7 @@ try{
 
                 conn = ds.getConnection();
                 stmt = conn.createStatement();
-                String sql1= "insert into demo values ('"+ame+"','"+age+"','"+servername+"',CURRENT_TIMESTAMP)";
+                String sql1= "insert into demo values ('"+name+"','"+age+"','"+servername+"',CURRENT_TIMESTAMP)";
 System.out.println(sql1);
 System.out.println(servername);
                 stmt.executeUpdate(sql1);
