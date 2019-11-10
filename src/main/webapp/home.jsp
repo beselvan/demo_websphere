@@ -20,7 +20,13 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 
-
+    <%
+        InetAddress ia = InetAddress.getLocalHost();
+        String node = ia.getHostName();
+		
+        out.println("<!-- hostname  " + node+  " -->");
+        pageContext.setAttribute("node", node);
+    %>
 <p"><a href=result.jsp>RESULT</a></p>
 <script type="text/javascript">
  
@@ -84,7 +90,7 @@ catch(Exception e){
 
 
 
-
+<p><font color="red"><%=node%></font></P>
 
 </body>
 </html>
